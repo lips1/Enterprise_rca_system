@@ -1,0 +1,24 @@
+[
+  {
+    "log_id": "pg-1001",
+    "timestamp": "2026-06-17T01:38:00",
+    "service_name": "billing-etl",
+    "level": "WARN",
+    "message": "Billing ETL warehouse connection slow; retrying connection attempt."
+  },
+  {
+    "log_id": "pg-1002",
+    "timestamp": "2026-06-17T01:42:00",
+    "service_name": "billing-etl",
+    "level": "ERROR",
+    "message": "Billing ETL failed during warehouse load step: connection timeout after 30 seconds."
+  },
+  {
+    "log_id": "pg-1003",
+    "timestamp": "2026-06-17T01:45:00",
+    "service_name": "billing-etl",
+    "level": "ERROR",
+    "message": "Retry attempt 3 failed due to warehouse connection timeout."
+  }
+]
+

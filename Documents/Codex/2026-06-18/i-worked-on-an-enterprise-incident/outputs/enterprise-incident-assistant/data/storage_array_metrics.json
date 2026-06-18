@@ -1,0 +1,33 @@
+[
+  {
+    "metric_id": "arr-201-001",
+    "timestamp": "2026-06-17T01:20:00",
+    "service_name": "array-capacity-etl",
+    "array_id": 201,
+    "colo": "colo-a",
+    "capacity_used_pct": 68,
+    "capacity_spike_pct": 12,
+    "write_latency_ms": 18
+  },
+  {
+    "metric_id": "arr-201-002",
+    "timestamp": "2026-06-17T01:46:00",
+    "service_name": "array-capacity-etl",
+    "array_id": 201,
+    "colo": "colo-a",
+    "capacity_used_pct": 91,
+    "capacity_spike_pct": 70,
+    "write_latency_ms": 145
+  },
+  {
+    "metric_id": "arr-201-003",
+    "timestamp": "2026-06-17T02:15:00",
+    "service_name": "array-capacity-etl",
+    "array_id": 201,
+    "colo": "colo-a",
+    "capacity_used_pct": 87,
+    "capacity_spike_pct": 45,
+    "write_latency_ms": 72
+  }
+]
+

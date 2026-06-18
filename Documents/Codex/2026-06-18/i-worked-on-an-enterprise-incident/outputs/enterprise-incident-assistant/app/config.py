@@ -1,0 +1,23 @@
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
+
+AZURE_SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT")
+AZURE_SEARCH_KEY = os.getenv("AZURE_SEARCH_KEY")
+AZURE_SEARCH_INDEX = os.getenv("AZURE_SEARCH_INDEX", "incident-documents")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_KEY = os.getenv("AZURE_OPENAI_API_KEY") or os.getenv("AZURE_OPENAI_KEY")
+AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
+AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION")
+
+POSTGRES_CONN = os.getenv("POSTGRES_CONN")
+VERTICA_CONN = os.getenv("VERTICA_CONN")
+ETL_API_URL = os.getenv("ETL_API_URL")
+WAREHOUSE_API_URL = os.getenv("WAREHOUSE_API_URL")
+STORAGE_ARRAY_API_URL = os.getenv("STORAGE_ARRAY_API_URL")
+BUNDLE_EVENTS_API_URL = os.getenv("BUNDLE_EVENTS_API_URL")
+CHANGE_EVENT_API_URL = os.getenv("CHANGE_EVENT_API_URL")

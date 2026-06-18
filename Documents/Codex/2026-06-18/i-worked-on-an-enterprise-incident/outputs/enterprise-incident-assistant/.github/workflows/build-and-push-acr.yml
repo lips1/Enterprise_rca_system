@@ -1,0 +1,57 @@
+name: Build, push to ACR and deploy
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  IMAGE_NAME: incident-assistant
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.build.outputs.image }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Login to ACR
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+
+      - name: Build and push image
+        id: build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
+          outputs: type=registry,name=${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Container Apps
+        shell: pwsh
+        run: |
+          # Ensure subscription is set (provide AZURE_SUBSCRIPTION_ID secret)
+          if (-not $env:AZURE_SUBSCRIPTION_ID) {
+            Write-Host 'Warning: AZURE_SUBSCRIPTION_ID not set as secret; using default subscription in service principal.'
+          } else {
+            az account set --subscription $env:AZURE_SUBSCRIPTION_ID
+          }
+          pwsh -NoProfile -NonInteractive -Command ./scripts/azure_deploy_containerapps.ps1 -SubscriptionId $env:AZURE_SUBSCRIPTION_ID

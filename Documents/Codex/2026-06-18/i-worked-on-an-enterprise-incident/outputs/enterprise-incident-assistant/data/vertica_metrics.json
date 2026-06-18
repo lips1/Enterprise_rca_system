@@ -1,0 +1,27 @@
+[
+  {
+    "metric_id": "vm-2001",
+    "timestamp": "2026-06-17T01:35:00",
+    "service_name": "billing-etl",
+    "active_sessions": 92,
+    "max_sessions": 100,
+    "p95_query_latency_ms": 4200
+  },
+  {
+    "metric_id": "vm-2002",
+    "timestamp": "2026-06-17T01:40:00",
+    "service_name": "billing-etl",
+    "active_sessions": 100,
+    "max_sessions": 100,
+    "p95_query_latency_ms": 8900
+  },
+  {
+    "metric_id": "vm-2003",
+    "timestamp": "2026-06-17T02:10:00",
+    "service_name": "billing-etl",
+    "active_sessions": 54,
+    "max_sessions": 100,
+    "p95_query_latency_ms": 1300
+  }
+]
+

@@ -1,0 +1,24 @@
+[
+  {
+    "doc_id": "runbook-001",
+    "title": "Billing ETL warehouse timeout runbook",
+    "service_name": "billing-etl",
+    "created_at": "2026-03-10T09:00:00",
+    "content": "Billing ETL can fail when warehouse active sessions reach the configured maximum. Check Vertica active sessions, connection pool usage, and long-running load jobs before retrying."
+  },
+  {
+    "doc_id": "rca-014",
+    "title": "Previous RCA for billing ETL failure",
+    "service_name": "billing-etl",
+    "created_at": "2026-04-22T11:30:00",
+    "content": "A prior billing ETL incident was caused by warehouse connection pool exhaustion. PostgreSQL logs showed connection timeout and Vertica metrics showed max sessions reached."
+  },
+  {
+    "doc_id": "sop-009",
+    "title": "ETL retry SOP",
+    "service_name": "billing-etl",
+    "created_at": "2026-01-05T08:00:00",
+    "content": "Do not restart failed ETL jobs until warehouse sessions normalize. Capture logs, metrics, and job status before retrying."
+  }
+]
+

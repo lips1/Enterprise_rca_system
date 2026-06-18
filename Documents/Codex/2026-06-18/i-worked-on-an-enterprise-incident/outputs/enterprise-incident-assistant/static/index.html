@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incident Investigation Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Enterprise Incident Investigation Assistant</h1>
+      <p>Azure GenAI orchestration with HPE on-prem operational data tools</p>
+    </div>
+    <button id="evalBtn">Run Eval</button>
+  </header>
+
+  <main class="layout">
+    <section class="panel query-panel">
+      <h2>Investigation</h2>
+      <label>Role</label>
+      <select id="role">
+        <option>SRE</option>
+        <option>INCIDENT_COMMANDER</option>
+        <option>DBA</option>
+        <option>L1_SUPPORT</option>
+      </select>
+
+      <label>Incident ID</label>
+      <input id="incidentId" value="INC12345">
+
+      <label>Service</label>
+      <input id="serviceName" value="billing-etl">
+
+      <label>Question</label>
+      <textarea id="query">Why did the billing ETL fail last night?</textarea>
+
+      <div class="grid2">
+        <div>
+          <label>Start</label>
+          <input id="startTime" value="2026-06-17T00:00:00">
+        </div>
+        <div>
+          <label>End</label>
+          <input id="endTime" value="2026-06-17T06:00:00">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="syncBtn">Run Sync</button>
+        <button id="asyncBtn" class="secondary">Run Async</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Summary</h2>
+      <div id="summary" class="answer">Run an investigation to see output.</div>
+      <h3>Probable Root Cause</h3>
+      <div id="rootCause" class="callout"></div>
+      <h3>Recommended Actions</h3>
+      <ul id="actions"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Observability</h2>
+      <div id="metrics" class="metric-grid"></div>
+      <h3>Agent Latency and Tokens</h3>
+      <div id="agents"></div>
+      <h3>Tool Calls</h3>
+      <div id="tools"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Governance and Evaluation</h2>
+      <h3>Guardrails</h3>
+      <div id="guardrails"></div>
+      <h3>Agent Evaluation</h3>
+      <div id="evals"></div>
+      <h3>Evidence Timeline</h3>
+      <ul id="timeline"></ul>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
+

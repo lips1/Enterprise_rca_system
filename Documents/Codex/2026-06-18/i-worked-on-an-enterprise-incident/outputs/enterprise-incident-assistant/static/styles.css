@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+  color: #17202a;
+}
+
+.topbar {
+  min-height: 88px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #182230;
+  color: white;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 14px;
+  margin-top: 18px;
+  color: #40566f;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #d8dee6;
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 240px;
+}
+
+.query-panel {
+  grid-row: span 2;
+}
+
+label {
+  display: block;
+  margin: 12px 0 6px;
+  color: #40566f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #bdc7d3;
+  border-radius: 6px;
+  padding: 10px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background: #1769e0;
+  color: white;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #40566f;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.answer {
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.callout {
+  border-left: 4px solid #1769e0;
+  padding: 10px 12px;
+  background: #eef5ff;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  border: 1px solid #d8dee6;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fafbfc;
+}
+
+.metric strong {
+  display: block;
+  font-size: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1.2fr .7fr .7fr 2fr;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #edf0f3;
+  font-size: 13px;
+}
+
+.pass {
+  color: #0b7a3b;
+  font-weight: 700;
+}
+
+.fail {
+  color: #b42318;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

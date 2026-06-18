@@ -1,0 +1,10 @@
+[
+  {
+    "change_id": "chg-5001",
+    "timestamp": "2026-06-17T00:20:00",
+    "service_name": "billing-etl",
+    "description": "No billing ETL deployment in the incident window. Last config change was outside the failure period.",
+    "confidence": "medium"
+  }
+]
+

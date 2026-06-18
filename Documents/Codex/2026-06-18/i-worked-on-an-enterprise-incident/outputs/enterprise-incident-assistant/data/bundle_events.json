@@ -1,0 +1,22 @@
+[
+  {
+    "event_id": "bun-201-001",
+    "timestamp": "2026-06-17T01:48:00",
+    "service_name": "array-capacity-etl",
+    "array_id": 201,
+    "colo": "colo-a",
+    "bundle_id": "BNDL-7781",
+    "status": "NOT_RECEIVED",
+    "message": "Update bundle BNDL-7781 was not received by colo-a ingestion endpoint for array 201."
+  },
+  {
+    "event_id": "bun-201-002",
+    "timestamp": "2026-06-17T01:52:00",
+    "service_name": "array-capacity-etl",
+    "array_id": 201,
+    "colo": "colo-a",
+    "bundle_id": "BNDL-7781",
+    "status": "NOT_UPDATED",
+    "message": "Array 201 was not updated in colo-a because the required bundle was missing."
+  }
+]
